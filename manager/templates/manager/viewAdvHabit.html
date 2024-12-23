@@ -1,0 +1,80 @@
+{% extends 'habitualize/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block style %}
+<link rel="stylesheet" href={% static 'habitualize/advanced.css' %}>
+{% endblock %}
+
+{% block content %}
+    <h1 style="color:black; padding:25px;">Advanced Habit Editor</h1>
+    <form method="POST" class="rounded form px-5" style="color:black;">
+        {% csrf_token %}
+        <div>
+            <h2 class="blueHeader">Cue</h2>
+            <div style="background-color:#FFFFFF;" class="advSection">
+                <h3>Implementation Intention</h3>
+
+                <label for="time">When:</label><br>
+                <input type="text" name="time" id="time" value="{{form.time.value}}" size="100"/>
+                <br>
+                <label for="place">Where:</label><br>
+                <input type="text" name="place" id="place" value="{{form.place.value}}" size="100"/>
+                <br><br>
+                <h3>Making It Obvious</h3>
+                <label for="env_obvious">How can you modify your environment to make the habit noticable?</label><br>
+                <textarea type="text" class="container" style="padding:2px;" name="env_obvious" id="env_obvious">{{form.env_obvious.value}}</textarea>
+            </div>
+
+            <h2 class="blueHeader">Craving</h2>
+            <div style="background-color:#FFFFFF;" class="advSection">
+                <h3>Habit Bundling</h3>
+                <label for="habit_bundling">What enjoyable things can you do while performing your habit?</label><br>
+                <textarea type="text" class="container" style="padding:2px;" name="habit_bundling" id="habit_bundling">{{form.habit_bundling.value}}</textarea>
+                <br><br>
+                <h3>Culture</h3>
+                <label for="culture">What groups can you join that are related to your habit?</label><br>
+                <input type="text" name="culture" id="culture" value="{{form.culture.value}}" size="100"/>
+                <br>
+                <label for="figure">Anyone in mind that's related to your habit and/or someone you look up to?</label><br>
+                <input type="text" name="figure" id="figure" value="{{form.figure.value}}" size="100"/>
+                <br><br>
+                <h3>Benefits</h3>
+                <label for="benefits">What will you gain doing this habit? Why do you want to behave this way?</label><br>
+                <textarea type="text" class="container" style="padding:2px;" name="benefits" id="benefits">{{form.benefits.value}}</textarea>
+                <br><br>
+                <h3>Motivation Ritual</h3>
+                <label for="motivation_ritual">What small, pleasant action can you do before doing your habit?</label><br>
+                <textarea type="text" class="container" style="padding:2px;" name="motivation_ritual" id="motivation_ritual">{{form.motivation_ritual.value}}</textarea>
+            </div>
+
+            <h2 class="blueHeader">Response</h2>
+            <div style="background-color:#FFFFFF;" class="advSection">
+                <h3>Habit Shaping</h3>
+                <label for="habit_shaping">How can you modify your habit into progressive phases? (generally when starting out, your habit should take less 
+                    than 2 minutes)</label><br>
+                <textarea type="text" class="container" style="padding:2px;" name="habit_shaping" id="habit_shaping">{{form.habit_shaping.value}}</textarea>
+                <br><br>
+                <h3>Reducing Friction</h3>
+                <label for="reduce_friction">What can you do to modify your environment to make your habit as smooth-sailing as possible?</label><br>
+                <textarea type="text" class="container" style="padding:2px;" name="reduce_friction" id="reduce_friction">{{form.reduce_friction.value}}</textarea>
+            </div>
+
+            <h2 class="blueHeader">Reward</h2>
+            <div style="background-color:#FFFFFF;" class="advSection">
+                <h3>Incentives</h3>
+                <label for="incentive">What's an instant reward that doesn't go against your habit or identities?</label><br>
+                <textarea type="text" class="container" style="padding:2px;" name="incentive" id="incentive">{{form.incentive.value}}</textarea>
+                <br><br>
+                <h3>Progress</h3>
+                <label for="progress">How will you measure your progress?</label><br>
+                <textarea type="text" class="container" style="padding:2px;" name="progress" id="progress">{{form.progress.value}}</textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn px-5 my-5 mx-auto rounded" style="background-color:#9CFF5F; display:block;">
+            <h2>Update</h2>
+        </button>
+    </form>
+
+    {% include 'habitualize/sidebar.html' %}
+{% endblock %}

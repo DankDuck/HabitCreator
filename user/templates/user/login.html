@@ -1,0 +1,22 @@
+{% extends "habitualize/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'habitualize/form.css' %}" rel="stylesheet"/>
+{% endblock %}
+{% block content %}
+    <div id="center" class = "d-flex flex-grow-1 justify-content-center align-items-center">
+        <form method="POST" class="container rounded shadow form px-5">
+            <h1 class="mx-auto mt-3" style="text-align:center;">Log In</h1>
+            {% csrf_token %}
+            {{ form | crispy }}
+            <a class="text-muted" href="{% url 'signUp' %}" style="display:block; margin-top:10%;">
+                Don't have an account? Sign Up
+            </a>
+            <button type="submit" class="btn px-5 mt-5 mx-auto rounded" style="background-color:#9CFF5F; display:block;">
+                <h2>Submit</h2>
+            </button>
+        </form>
+    </div>
+{% endblock %}

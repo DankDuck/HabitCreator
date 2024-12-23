@@ -1,0 +1,13 @@
+.advSection {
+    background-color:white;
+    width:95%;
+    margin-right:auto;
+    padding:2%;
+}
+.blueHeader {
+    background-color:#00FFE0;
+    margin-bottom:0px;
+}
+body {
+    font-family:'Roboto Condensed', sans-serif;
+}

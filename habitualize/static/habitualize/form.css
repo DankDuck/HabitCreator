@@ -1,0 +1,12 @@
+.form {
+    width:50%;
+    height:90%;
+    background-color:#F5F5F5;    
+}
+#center{
+    height: 100vh;
+    width:100%;
+}
+label {
+    margin-top:5%;
+}

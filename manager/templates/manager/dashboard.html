@@ -1,0 +1,18 @@
+{% extends 'habitualize/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div style="margin:3%;">
+        <h1 class="mb-3">Habit Dashboard</h1>
+
+        {% for habit in basic_habits %}
+          <a href="{% url 'view' habit.id %}">
+            <button class="btn rounded mb-4 text-start" style="background-color:#00FFE0; width: 50%;"> {{ habit.name }} </button>
+          </a>
+          <br>
+        {% endfor %} 
+    </div>
+    
+    {% include 'habitualize/sidebar.html' %}
+{% endblock %}

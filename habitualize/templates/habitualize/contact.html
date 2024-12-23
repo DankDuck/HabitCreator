@@ -1,0 +1,24 @@
+{% extends "habitualize/base.html" %}
+{% block content %}
+<header>
+    <nav class="navbar navbar-expand-sm bg-light">
+        <a class="navbar-brand mx-3" href="{% url 'home' %}">
+            <b>Habitualize</b>
+        </a>
+        <div class="navbar-nav">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </div>
+        <div class="navbar-nav ms-auto mx-3">
+            <a class="nav-link me-3" href="{% url 'login' %}">Log In</a>
+            <a href="{% url 'signUp' %}">
+                <button class="btn btn-dark px-4">Sign Up</button>
+            </a>
+        </div>
+    </nav>
+</header>
+<div class="p-4">
+    <h2>Contact Info</h2>
+    <a class="h3" href="mailto:reg.gurun@gmail.com" style="color:blue;">reg.gurun@gmail.com</a>
+</div>
+{% endblock %}
